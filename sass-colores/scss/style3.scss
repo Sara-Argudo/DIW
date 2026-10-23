@@ -1,0 +1,23 @@
+// Mapa de elevaciones con valores de box-shadow
+$elevaciones: (
+  1: 0 1px 3px rgb(0 0 0 / 20%),
+  2: 0 4px 6px rgb(0 0 0 / 20%),
+  3: 0 5px 15px rgb(0 0 0 / 20%),
+  4: 0 10px 24px rgb(0 0 0 / 20%),
+  5: 0 15px 35px rgb(0 0 0 / 20%),
+);
+
+// Bucle para generar clases de elevación automáticamente
+@for $i from 1 through 5 {
+  .elevacion-#{$i} {
+    box-shadow: map-get($elevaciones, $i);
+  }
+}
+
+// Ejemplo de uso
+.square {
+  width: 80px;
+  height: 80px;
+  background-color: #fff;
+  border-radius: 4px;
+}

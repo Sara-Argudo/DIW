@@ -1,0 +1,28 @@
+.elevacion-1 {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.elevacion-2 {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.elevacion-3 {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.elevacion-4 {
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
+}
+
+.elevacion-5 {
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.square {
+  width: 80px;
+  height: 80px;
+  background-color: #fff;
+  border-radius: 4px;
+}
+
+/*# sourceMappingURL=style3.css.map */

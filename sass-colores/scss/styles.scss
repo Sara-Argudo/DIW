@@ -1,0 +1,74 @@
+$prefix: "sara-sys-color";
+
+$colores: (
+    "amarillo": (
+        1: #6D5303,
+        2: #9A7809,
+        3: #C69C10,
+        4: #E9BC1C,
+        5: #ECC94B,
+        6: #F2D978,
+        7: #F7E7A6,
+        8: #FCF4CF,
+        9: #FFFFFF
+    ),
+
+    "azul": (
+        1: #010A2B,
+        2: #07164F,
+        3: #102A73,
+        4: #193D96,
+        5: #2454B8,
+        6: #5879C9,
+        7: #8CA0DB,
+        8: #C0C9ED,
+        9: #FFFFFF
+    ),
+
+    "verde": (
+        1: #062B0A,
+        2: #0F4F16,
+        3: #1F7328,
+        4: #2F9638,
+        5: #3FB84A,
+        6: #6FC978,
+        7: #9CDBA2,
+        8: #C8EDCB,
+        9: #FFFFFF  
+        
+
+    )
+);
+
+
+:root {
+
+    @each $nombre, $tonalidades in $colores {
+
+        @each $numero, $color in $tonalidades {
+
+            --#{$prefix}-#{$nombre}-#{$numero}: #{$color};
+
+        }
+
+    }
+
+}
+
+
+.caja {
+    padding: 30px;
+    margin: 20px;
+    color: white;
+    font-size: 24px;
+}
+
+
+.caja-amarillo {
+    background-color: var(--mlt-sys-color-amarillo-3);
+}
+
+
+.caja-azul {
+    background-color: var(--mlt-sys-color-azul-3);
+}

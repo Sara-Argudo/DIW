@@ -1,0 +1,46 @@
+:root {
+  --sara-sys-color-amarillo-1: #6D5303;
+  --sara-sys-color-amarillo-2: #9A7809;
+  --sara-sys-color-amarillo-3: #C69C10;
+  --sara-sys-color-amarillo-4: #E9BC1C;
+  --sara-sys-color-amarillo-5: #ECC94B;
+  --sara-sys-color-amarillo-6: #F2D978;
+  --sara-sys-color-amarillo-7: #F7E7A6;
+  --sara-sys-color-amarillo-8: #FCF4CF;
+  --sara-sys-color-amarillo-9: #FFFFFF;
+  --sara-sys-color-azul-1: #010A2B;
+  --sara-sys-color-azul-2: #07164F;
+  --sara-sys-color-azul-3: #102A73;
+  --sara-sys-color-azul-4: #193D96;
+  --sara-sys-color-azul-5: #2454B8;
+  --sara-sys-color-azul-6: #5879C9;
+  --sara-sys-color-azul-7: #8CA0DB;
+  --sara-sys-color-azul-8: #C0C9ED;
+  --sara-sys-color-azul-9: #FFFFFF;
+  --sara-sys-color-verde-1: #062B0A;
+  --sara-sys-color-verde-2: #0F4F16;
+  --sara-sys-color-verde-3: #1F7328;
+  --sara-sys-color-verde-4: #2F9638;
+  --sara-sys-color-verde-5: #3FB84A;
+  --sara-sys-color-verde-6: #6FC978;
+  --sara-sys-color-verde-7: #9CDBA2;
+  --sara-sys-color-verde-8: #C8EDCB;
+  --sara-sys-color-verde-9: #FFFFFF;
+}
+
+.caja {
+  padding: 30px;
+  margin: 20px;
+  color: white;
+  font-size: 24px;
+}
+
+.caja-amarillo {
+  background-color: var(--mlt-sys-color-amarillo-3);
+}
+
+.caja-azul {
+  background-color: var(--mlt-sys-color-azul-3);
+}
+
+/*# sourceMappingURL=styles.css.map */

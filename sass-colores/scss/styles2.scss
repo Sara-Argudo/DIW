@@ -1,0 +1,78 @@
+$prefix: "mlt-sys-color";
+
+$colores: (
+    "amarillo": (
+        22: hsl(45deg 95% 22%),
+        32: hsl(46deg 89% 32%),
+        42: hsl(46deg 85% 42%),
+        51: hsl(47deg 82% 51%),
+        61: hsl(47deg 81% 61%),
+        71: hsl(48deg 82% 71%),
+        81: hsl(48deg 84% 81%),
+        90: hsl(49deg 88% 90%),
+        100: hsl(0deg 0% 100%)
+    ),
+
+    "azul": (
+        9: hsl(227deg 95% 9%),
+        17: hsl(228deg 84% 17%),
+        26: hsl(224deg 76% 26%),
+        34: hsl(223deg 71% 34%),
+        43: hsl(221deg 67% 43%),
+        57: hsl(222deg 51% 57%),
+        70: hsl(225deg 52% 70%),
+        84: hsl(228deg 55% 84%),
+        100: hsl(0deg 0% 100%)
+    ),
+
+    "verde": (
+        10: hsl(126deg 75% 10%),
+        18: hsl(127deg 68% 18%),
+        29: hsl(126deg 57% 29%),
+        39: hsl(125deg 52% 39%),
+        48: hsl(126deg 49% 48%),
+        61: hsl(126deg 45% 61%),
+        74: hsl(126deg 47% 74%),
+        86: hsl(125deg 51% 86%),
+        100: hsl(0deg 0% 100%)
+    ),
+
+    "rosa": (
+        5: hsl(325deg 95% 5%),
+        16: hsl(328deg 75% 16%),
+        28: hsl(330deg 61% 28%),
+        39: hsl(333deg 53% 39%),
+        50: hsl(335deg 50% 50%),
+        61: hsl(338deg 53% 61%),
+        73: hsl(340deg 61% 73%),
+        84: hsl(343deg 75% 84%),
+        95: hsl(345deg 95% 95%)
+    )
+);
+
+:root {
+    @each $nombre, $tonalidades in $colores {
+        @each $numero, $color in $tonalidades {
+            --#{$prefix}-#{$nombre}-#{$numero}: #{$color};
+        }
+    }
+}
+
+.caja {
+    padding: 30px;
+    margin: 20px;
+    color: white;
+    font-size: 24px;
+}
+
+.caja-amarillo {
+    background-color: var(--mlt-sys-color-amarillo-42);
+}
+
+.caja-azul {
+    background-color: var(--mlt-sys-color-azul-26);
+}
+
+.caja-verde {
+    background-color: var(--mlt-sys-color-verde-29);
+}

@@ -1,0 +1,59 @@
+:root {
+  --mlt-sys-color-amarillo-22: hsl(45, 95%, 22%);
+  --mlt-sys-color-amarillo-32: hsl(46, 89%, 32%);
+  --mlt-sys-color-amarillo-42: hsl(46, 85%, 42%);
+  --mlt-sys-color-amarillo-51: hsl(47, 82%, 51%);
+  --mlt-sys-color-amarillo-61: hsl(47, 81%, 61%);
+  --mlt-sys-color-amarillo-71: hsl(48, 82%, 71%);
+  --mlt-sys-color-amarillo-81: hsl(48, 84%, 81%);
+  --mlt-sys-color-amarillo-90: hsl(49, 88%, 90%);
+  --mlt-sys-color-amarillo-100: hsl(0, 0%, 100%);
+  --mlt-sys-color-azul-9: hsl(227, 95%, 9%);
+  --mlt-sys-color-azul-17: hsl(228, 84%, 17%);
+  --mlt-sys-color-azul-26: hsl(224, 76%, 26%);
+  --mlt-sys-color-azul-34: hsl(223, 71%, 34%);
+  --mlt-sys-color-azul-43: hsl(221, 67%, 43%);
+  --mlt-sys-color-azul-57: hsl(222, 51%, 57%);
+  --mlt-sys-color-azul-70: hsl(225, 52%, 70%);
+  --mlt-sys-color-azul-84: hsl(228, 55%, 84%);
+  --mlt-sys-color-azul-100: hsl(0, 0%, 100%);
+  --mlt-sys-color-verde-10: hsl(126, 75%, 10%);
+  --mlt-sys-color-verde-18: hsl(127, 68%, 18%);
+  --mlt-sys-color-verde-29: hsl(126, 57%, 29%);
+  --mlt-sys-color-verde-39: hsl(125, 52%, 39%);
+  --mlt-sys-color-verde-48: hsl(126, 49%, 48%);
+  --mlt-sys-color-verde-61: hsl(126, 45%, 61%);
+  --mlt-sys-color-verde-74: hsl(126, 47%, 74%);
+  --mlt-sys-color-verde-86: hsl(125, 51%, 86%);
+  --mlt-sys-color-verde-100: hsl(0, 0%, 100%);
+  --mlt-sys-color-rosa-5: hsl(325, 95%, 5%);
+  --mlt-sys-color-rosa-16: hsl(328, 75%, 16%);
+  --mlt-sys-color-rosa-28: hsl(330, 61%, 28%);
+  --mlt-sys-color-rosa-39: hsl(333, 53%, 39%);
+  --mlt-sys-color-rosa-50: hsl(335, 50%, 50%);
+  --mlt-sys-color-rosa-61: hsl(338, 53%, 61%);
+  --mlt-sys-color-rosa-73: hsl(340, 61%, 73%);
+  --mlt-sys-color-rosa-84: hsl(343, 75%, 84%);
+  --mlt-sys-color-rosa-95: hsl(345, 95%, 95%);
+}
+
+.caja {
+  padding: 30px;
+  margin: 20px;
+  color: white;
+  font-size: 24px;
+}
+
+.caja-amarillo {
+  background-color: var(--mlt-sys-color-amarillo-42);
+}
+
+.caja-azul {
+  background-color: var(--mlt-sys-color-azul-26);
+}
+
+.caja-verde {
+  background-color: var(--mlt-sys-color-verde-29);
+}
+
+/*# sourceMappingURL=styles2.css.map */
