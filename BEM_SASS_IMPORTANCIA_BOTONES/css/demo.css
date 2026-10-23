@@ -1,0 +1,206 @@
+@charset "UTF-8";
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: var(--mlt-sys-spacing-6);
+  font-family: var(--mlt-sys-font-default);
+  color: var(--mlt-sys-color-negro-50);
+}
+
+.l-paneles {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: var(--mlt-sys-separacion);
+}
+
+/* BLOQUE: botón */
+.c-boton {
+  /* Parte pública del componente */
+  --boton-color-normal: var(--mlt-sys-color-normal);
+  --boton-color-alternativa: var(--mlt-sys-color-alternativa);
+  --boton-color-peligrosa: var(--mlt-sys-color-peligrosa);
+  --boton-color-fondo: var(--mlt-sys-color-superficie);
+  --boton-font-family: var(--mlt-sys-font-default);
+  --boton-font-size-s: var(--mlt-sys-font-size-1);
+  --boton-font-size-m: var(--mlt-sys-font-size-3);
+  --boton-font-size-l: var(--mlt-sys-font-size-4);
+  --boton-padding-s: var(--mlt-sys-padding-1);
+  --boton-padding-m: var(--mlt-sys-padding-4);
+  --boton-padding-l: var(--mlt-sys-padding-5);
+  --boton-border-width: var(--mlt-sys-boton-borde);
+  --boton-border-radius: var(--mlt-sys-boton-radio);
+  --boton-disabled-opacity: var(--mlt-sys-opacity-disabled);
+  --boton-transicion: var(--mlt-sys-boton-transicion);
+  /* Parte privada del componente */
+  font-family: var(--boton-font-family);
+  font-size: var(--boton-font-size, var(--boton-font-size-m));
+  padding: var(--boton-padding, var(--boton-padding-m));
+  border-width: var(--boton-border-width);
+  border-style: solid;
+  border-radius: var(--boton-border-radius);
+  background-color: var(--boton-background-color, var(--boton-color-normal));
+  border-color: var(--boton-border-color, var(--boton-color-normal));
+  color: var(--boton-text-color, var(--boton-color-fondo));
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  transition: background-color var(--boton-transicion), border-color var(--boton-transicion), color var(--boton-transicion), transform var(--boton-transicion);
+}
+
+.c-boton:hover {
+  background-color: var(--boton-background-color-hover, var(--boton-background-color));
+  border-color: var(--boton-border-color-hover, var(--boton-border-color));
+  color: var(--boton-text-color-hover, var(--boton-text-color));
+  transform: translateY(-1px);
+}
+
+.c-boton:active {
+  transform: translateY(1px);
+}
+
+.c-boton:focus-visible {
+  outline: var(--boton-border-width) solid var(--boton-color);
+  outline-offset: 2px;
+}
+
+/* LA FUNCIÓN: define el color base, el de hover y el tinte */
+.c-boton--funcion-normal {
+  --boton-color: var(--mlt-sys-color-principal-50);
+  --boton-color-hover: var(--mlt-sys-color-principal-100);
+  --boton-color-tinte: var(--mlt-sys-color-principal-300);
+}
+
+.c-boton--funcion-alternativa {
+  --boton-color: var(--mlt-sys-color-alternativo-50);
+  --boton-color-hover: var(--mlt-sys-color-alternativo-100);
+  --boton-color-tinte: var(--mlt-sys-color-alternativo-300);
+}
+
+.c-boton--funcion-peligrosa {
+  --boton-color: var(--mlt-sys-color-peligro-50);
+  --boton-color-hover: var(--mlt-sys-color-peligro-100);
+  --boton-color-tinte: var(--mlt-sys-color-peligro-300);
+}
+
+/* IMPORTANCIA: define cómo se pintan los colores
+   Primaria: fondo y borde con el color de la función, texto claro.
+   Secundaria: fondo claro, borde con el color, texto con el color.
+   Terciaria: estilo de enlace, sin fondo ni borde visibles. */
+.c-boton--importancia-primaria {
+  --boton-background-color: var(--boton-color);
+  --boton-border-color: var(--boton-color);
+  --boton-text-color: var(--boton-color-fondo);
+  --boton-background-color-hover: var(--boton-color-hover);
+  --boton-border-color-hover: var(--boton-color-hover);
+}
+
+.c-boton--importancia-secundaria {
+  --boton-background-color: var(--boton-color-fondo);
+  --boton-border-color: var(--boton-color);
+  --boton-text-color: var(--boton-color);
+  --boton-background-color-hover: var(--boton-color-tinte);
+  --boton-border-color-hover: var(--boton-color);
+}
+
+.c-boton--importancia-terciaria {
+  --boton-background-color: var(--boton-color-fondo);
+  --boton-border-color: var(--boton-color-fondo);
+  --boton-text-color: var(--boton-color);
+  --boton-background-color-hover: var(--boton-color-tinte);
+  --boton-border-color-hover: var(--boton-color-fondo);
+  --boton-text-color-hover: var(--boton-color-hover);
+}
+
+/* TAMAÑO */
+.c-boton--size-s {
+  --boton-padding: var(--boton-padding-s);
+  --boton-font-size: var(--boton-font-size-s);
+}
+
+.c-boton--size-m {
+  --boton-padding: var(--boton-padding-m);
+  --boton-font-size: var(--boton-font-size-m);
+}
+
+.c-boton--size-l {
+  --boton-padding: var(--boton-padding-l);
+  --boton-font-size: var(--boton-font-size-l);
+}
+
+/* ESTADO: deshabilitado */
+.c-boton--disabled {
+  opacity: var(--boton-disabled-opacity);
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* BLOQUE: panel */
+.c-panel {
+  box-sizing: border-box;
+  border: var(--mlt-sys-panel-borde) solid var(--mlt-sys-color-borde);
+  background-color: var(--mlt-sys-color-superficie);
+  width: 100%;
+  /* Parte pública del componente */
+  --panel-color-borde: var(--mlt-sys-color-borde);
+  --panel-color-titulo-fondo: var(--mlt-sys-color-titulo);
+  --panel-color-titulo-texto: var(--mlt-sys-color-texto-claro);
+  --panel-relleno: var(--mlt-sys-panel-relleno);
+  /* Parte privada del componente */
+  border-color: var(--panel-color-borde);
+}
+
+/* ELEMENTO: barra de título */
+.c-panel__title {
+  padding: var(--panel-relleno);
+  background-color: var(--panel-color-titulo-fondo);
+  color: var(--panel-color-titulo-texto);
+  font-family: var(--mlt-sys-font-default);
+  font-size: var(--mlt-sys-font-size-3);
+  font-weight: var(--mlt-sys-font-weight-7);
+  letter-spacing: var(--mlt-sys-letter-spacing-2);
+  line-height: var(--mlt-sys-line-height-3);
+  margin: 0;
+}
+
+/* ELEMENTO: cuerpo del panel */
+.c-panel__body {
+  padding: var(--panel-relleno);
+  font-family: var(--mlt-sys-font-default);
+  font-size: var(--mlt-sys-font-size-2);
+}
+
+/* ELEMENTO: fila de botones del panel */
+.c-panel__acciones {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: var(--mlt-sys-separacion);
+  row-gap: var(--mlt-sys-separacion);
+}
+
+/* MODIFICADORES: función (borde y título toman el color de la paleta) */
+.c-panel--normal {
+  --panel-color-borde: var(--mlt-sys-color-principal-50);
+}
+.c-panel--normal .c-panel__title {
+  --panel-color-titulo-fondo: var(--mlt-sys-color-principal-50);
+}
+
+.c-panel--alternativa {
+  --panel-color-borde: var(--mlt-sys-color-alternativo-50);
+}
+.c-panel--alternativa .c-panel__title {
+  --panel-color-titulo-fondo: var(--mlt-sys-color-alternativo-50);
+}
+
+.c-panel--peligrosa {
+  --panel-color-borde: var(--mlt-sys-color-peligro-50);
+}
+.c-panel--peligrosa .c-panel__title {
+  --panel-color-titulo-fondo: var(--mlt-sys-color-peligro-50);
+}
+
+/*# sourceMappingURL=demo.css.map */

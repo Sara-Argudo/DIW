@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Importancia de botones</title>
+    <!-- 1) Variables públicas del sistema (generated): css/system.css -->
+    <link rel="stylesheet" href="css/system.css">
+    <!-- 2) Interfaz y componentes compilados: css/demo.css -->
+    <link rel="stylesheet" href="css/demo.css">
+</head>
+<body>
+
+    <main class="l-paneles">
+
+        <!-- Panel function normal -->
+        <article class="c-panel c-panel--normal">
+            <h2 class="c-panel__title">Normal</h2>
+
+            <div class="c-panel__body">
+                <div class="c-panel__acciones">
+                    <button class="c-boton c-boton--funcion-normal c-boton--importancia-primaria c-boton--size-l"
+                            onclick="mostrarInfo('Normal')">
+                        Mas información
+                    </button>
+
+                    <button class="c-boton c-boton--funcion-normal c-boton--importancia-secundaria c-boton--size-m"
+                            onclick="mostrarInfo('Normal')">
+                        Mas información
+                    </button>
+
+                    <button class="c-boton c-boton--funcion-normal c-boton--importancia-terciaria c-boton--size-s"
+                            onclick="mostrarInfo('Normal')">
+                        Mas información
+                    </button>
+                </div>
+            </div>
+        </article>
+
+        <!-- Panel función alternativa -->
+        <article class="c-panel c-panel--alternativa">
+            <h2 class="c-panel__title">Alternativos</h2>
+
+            <div class="c-panel__body">
+                <div class="c-panel__acciones">
+                    <button class="c-boton c-boton--funcion-alternativa c-boton--importancia-primaria c-boton--size-l"
+                            onclick="mostrarInfo('Alternativa')">
+                        Mas información
+                    </button>
+
+                    <button class="c-boton c-boton--funcion-alternativa c-boton--importancia-secundaria c-boton--size-m"
+                            onclick="mostrarInfo('Alternativa')">
+                        Mas información
+                    </button>
+
+                    <button class="c-boton c-boton--funcion-alternativa c-boton--importancia-terciaria c-boton--size-s"
+                            onclick="mostrarInfo('Alternativa')">
+                        Mas información
+                    </button>
+                </div>
+            </div>
+        </article>
+
+        <!-- Panel función peligrosa -->
+        <article class="c-panel c-panel--peligrosa">
+            <h2 class="c-panel__title">Peligrosos</h2>
+
+            <div class="c-panel__body">
+                <div class="c-panel__acciones">
+                    <button class="c-boton c-boton--funcion-peligrosa c-boton--importancia-primaria c-boton--size-l"
+                            onclick="mostrarInfo('Peligrosa')">
+                        Mas información
+                    </button>
+
+                    <button class="c-boton c-boton--funcion-peligrosa c-boton--importancia-secundaria c-boton--size-m"
+                            onclick="mostrarInfo('Peligrosa')">
+                        Mas información
+                    </button>
+
+                    <button class="c-boton c-boton--funcion-peligrosa c-boton--importancia-terciaria c-boton--size-s"
+                            onclick="mostrarInfo('Peligrosa')">
+                        Mas información
+                    </button>
+                </div>
+            </div>
+        </article>
+
+    </main>
+
+    <script>
+        function mostrarInfo(funcion) {
+            alert("Información: " + funcion);
+        }
+    </script>
+
+</body>
+</html>

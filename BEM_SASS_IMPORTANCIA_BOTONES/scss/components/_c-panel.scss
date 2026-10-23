@@ -1,0 +1,79 @@
+// ============================================================
+// COMPONENTE: c-panel
+//
+// Los tres paneles comparten esta base y se diferencian por el
+// modificador BEM de función (generado con @each):
+//   - .c-panel--normal      → panel Normal
+//   - .c-panel--alternativa → panel Alternativos
+//   - .c-panel--peligrosa   → panel Peligrosos
+//
+// Todos los valores se consumen de las variables públicas
+// --mlt-sys-*. Los paneles agrupan botones; no definen la
+// función ni la importancia de los botones que contienen.
+// ============================================================
+
+@use "../variables-sistema" as sys;
+
+/* BLOQUE: panel */
+
+.c-panel {
+    box-sizing: border-box;
+    border: var(--mlt-sys-panel-borde) solid var(--mlt-sys-color-borde);
+    background-color: var(--mlt-sys-color-superficie);
+    width: 100%;
+
+    /* Parte pública del componente */
+
+    --panel-color-borde: var(--mlt-sys-color-borde);
+    --panel-color-titulo-fondo: var(--mlt-sys-color-titulo);
+    --panel-color-titulo-texto: var(--mlt-sys-color-texto-claro);
+    --panel-relleno: var(--mlt-sys-panel-relleno);
+
+    /* Parte privada del componente */
+
+    border-color: var(--panel-color-borde);
+}
+
+/* ELEMENTO: barra de título */
+
+.c-panel__title {
+    padding: var(--panel-relleno);
+    background-color: var(--panel-color-titulo-fondo);
+    color: var(--panel-color-titulo-texto);
+    font-family: var(--mlt-sys-font-default);
+    font-size: var(--mlt-sys-font-size-3);
+    font-weight: var(--mlt-sys-font-weight-7);
+    letter-spacing: var(--mlt-sys-letter-spacing-2);
+    line-height: var(--mlt-sys-line-height-3);
+    margin: 0;
+}
+
+/* ELEMENTO: cuerpo del panel */
+
+.c-panel__body {
+    padding: var(--panel-relleno);
+    font-family: var(--mlt-sys-font-default);
+    font-size: var(--mlt-sys-font-size-2);
+}
+
+/* ELEMENTO: fila de botones del panel */
+
+.c-panel__acciones {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    column-gap: var(--mlt-sys-separacion);
+    row-gap: var(--mlt-sys-separacion);
+}
+
+/* MODIFICADORES: función (borde y título toman el color de la paleta) */
+
+@each $funcion, $paleta in sys.$funciones {
+    .c-panel--#{$funcion} {
+        --panel-color-borde: var(--mlt-sys-color-#{$paleta}-50);
+
+        .c-panel__title {
+            --panel-color-titulo-fondo: var(--mlt-sys-color-#{$paleta}-50);
+        }
+    }
+}

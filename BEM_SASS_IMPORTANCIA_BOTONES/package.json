@@ -1,0 +1,8 @@
+{
+  "name": "bem-sass-importancia-botones",
+  "version": "1.0.0",
+  "description": "Nueva version de la interfaz de index2.html con variables de sistema Sass, variables CSS publicas y componentes BEM independientes (3 funciones x 3 niveles de importancia)",
+  "scripts": {
+    "build:sass": "sass scss:css"
+  }
+}

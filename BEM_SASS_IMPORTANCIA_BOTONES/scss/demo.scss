@@ -1,0 +1,18 @@
+// ============================================================
+// ESTILOS DE LA INTERFAZ NUEVA
+//
+// Basada en index2.html (tabla de importancia), pero con tres
+// paneles independientes que agrupan los nueve botones
+// (3 funciones x 3 importancias).
+//
+// Compilar con: sass scss:css  (o npm run build:sass)
+// Cargado por:  index-sass.html  →  css/system.css + css/demo.css
+//
+// system.css NO se incluye aquí: el HTML lo carga antes para
+// no duplicar las variables públicas del sistema.
+// ============================================================
+
+@use "base";
+@use "l-paneles";
+@use "components/c-boton";
+@use "components/c-panel";

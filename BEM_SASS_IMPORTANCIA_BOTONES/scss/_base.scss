@@ -1,0 +1,15 @@
+// ============================================================
+// BASE: estilos generales de la página
+// ============================================================
+
+@use "variables-sistema" as sys;
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: var(--mlt-sys-spacing-6);
+    font-family: var(--mlt-sys-font-default);
+    color: var(--mlt-sys-color-negro-50);
+}

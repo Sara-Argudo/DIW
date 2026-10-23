@@ -1,0 +1,15 @@
+// ============================================================
+// LAYOUT: l-paneles
+//
+// Coloca los tres paneles apilados uno debajo de otro,
+// siguiendo el patrón de layout (l-) del proyecto.
+// ============================================================
+
+@use "variables-sistema" as sys;
+
+.l-paneles {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: var(--mlt-sys-separacion);
+}

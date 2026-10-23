@@ -1,0 +1,127 @@
+// ============================================================
+// VARIABLES PÚBLICAS DEL SISTEMA
+//
+// Genera en :root todas las variables CSS --mlt-sys-* a partir
+// de las variables Sass de _variables-sistema.scss, mediante
+// bucles @for sobre las escalas y las paletas.
+//
+// Salida compilada: css/system.css
+// ============================================================
+
+@use "sass:list";
+@use "variables-sistema" as *;
+
+:root {
+
+    /* --------------------------------------------------------
+       ESCALAS DE COLORES — paletas generadas con @for
+       -------------------------------------------------------- */
+
+    @each $nombre, $escala in $paletas {
+
+        @for $i from 1 through list.length($tonos) {
+            --#{$prefix}-color-#{$nombre}-#{list.nth($tonos, $i)}: #{list.nth($escala, $i)};
+        }
+    }
+
+    /* Tokens semánticos de color (referencian las escalas) */
+    --#{$prefix}-color-superficie: var(--#{$prefix}-color-blanco-50);
+    --#{$prefix}-color-texto-claro: var(--#{$prefix}-color-blanco-50);
+    --#{$prefix}-color-normal: var(--#{$prefix}-color-principal-50);
+    --#{$prefix}-color-alternativa: var(--#{$prefix}-color-alternativo-50);
+    --#{$prefix}-color-peligrosa: var(--#{$prefix}-color-peligro-50);
+    --#{$prefix}-color-titulo: var(--#{$prefix}-color-gris-50);
+    --#{$prefix}-color-borde: var(--#{$prefix}-color-gris-300);
+
+    /* --------------------------------------------------------
+       ESPACIADO — escala generada con @for
+       -------------------------------------------------------- */
+
+    @for $i from 1 through list.length($espaciados) {
+        --#{$prefix}-spacing-#{$i}: #{list.nth($espaciados, $i)};
+    }
+
+    /* Paddings compuestos, construidos sobre la escala */
+    --#{$prefix}-padding-1: var(--#{$prefix}-spacing-3) var(--#{$prefix}-spacing-5);   /* 6px 10px  */
+    --#{$prefix}-padding-2: var(--#{$prefix}-spacing-4);                               /* 8px       */
+    --#{$prefix}-padding-3: var(--#{$prefix}-spacing-6);                               /* 12px      */
+    --#{$prefix}-padding-4: var(--#{$prefix}-spacing-6) var(--#{$prefix}-spacing-8);   /* 12px 18px */
+    --#{$prefix}-padding-5: var(--#{$prefix}-spacing-9) var(--#{$prefix}-spacing-11);  /* 20px 28px */
+
+    --#{$prefix}-separacion: var(--#{$prefix}-spacing-7);   /* 16px, separación entre paneles y botones */
+
+    /* Tamaños — escala generada con @for */
+    @for $i from 1 through list.length($sizes) {
+        --#{$prefix}-size-#{$i}: #{list.nth($sizes, $i)};
+    }
+
+    /* --------------------------------------------------------
+       TIPOGRAFÍA — escalas generadas con @for
+       -------------------------------------------------------- */
+
+    --#{$prefix}-font-default: #{$font-familia};
+
+    @for $i from 1 through list.length($font-sizes) {
+        --#{$prefix}-font-size-#{$i}: #{list.nth($font-sizes, $i)};
+    }
+
+    @for $i from 1 through list.length($line-heights) {
+        --#{$prefix}-line-height-#{$i}: #{list.nth($line-heights, $i)};
+    }
+
+    @for $i from 1 through list.length($font-weights) {
+        --#{$prefix}-font-weight-#{$i}: #{list.nth($font-weights, $i)};
+    }
+
+    @for $i from 1 through list.length($letter-spacings) {
+        --#{$prefix}-letter-spacing-#{$i}: #{list.nth($letter-spacings, $i)};
+    }
+
+    /* --------------------------------------------------------
+       BORDES — escalas generadas con @for
+       -------------------------------------------------------- */
+
+    @for $i from 1 through list.length($border-radii) {
+        --#{$prefix}-border-radius-#{$i}: #{list.nth($border-radii, $i)};
+    }
+
+    @for $i from 1 through list.length($border-widths) {
+        --#{$prefix}-border-width-#{$i}: #{list.nth($border-widths, $i)};
+    }
+
+    /* --------------------------------------------------------
+       OPACIDAD — escala generada con @for
+       -------------------------------------------------------- */
+
+    @for $i from 1 through list.length($opacities) {
+        --#{$prefix}-opacity-#{$i}: #{list.nth($opacities, $i)};
+    }
+
+    --#{$prefix}-opacity-disabled: 0.45;
+
+    /* --------------------------------------------------------
+       MOVIMIENTO Y Z-INDEX — sufijos según el valor
+       -------------------------------------------------------- */
+
+    @for $i from 1 through list.length($durations) {
+        --#{$prefix}-duration-#{list.nth($durations, $i)}: #{list.nth($durations, $i)}ms;
+    }
+
+    @for $i from 1 through list.length($z-indexes) {
+        --#{$prefix}-z-#{list.nth($z-indexes, $i)}: #{list.nth($z-indexes, $i)};
+    }
+
+    /* --------------------------------------------------------
+       TOKENS SEMÁNTICOS DE COMPONENTES
+       (convenio del proyecto BEM, mapeados sobre las escalas)
+       -------------------------------------------------------- */
+
+    /* Botones */
+    --#{$prefix}-boton-radio: var(--#{$prefix}-border-radius-3);       /* 4px  */
+    --#{$prefix}-boton-borde: var(--#{$prefix}-border-width-1);       /* 1px  */
+    --#{$prefix}-boton-transicion: var(--#{$prefix}-duration-200);    /* 200ms */
+
+    /* Paneles */
+    --#{$prefix}-panel-borde: var(--#{$prefix}-border-width-1);       /* 1px  */
+    --#{$prefix}-panel-relleno: var(--#{$prefix}-spacing-5);          /* 10px */
+}

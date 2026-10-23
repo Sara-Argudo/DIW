@@ -1,0 +1,236 @@
+@charset "UTF-8";
+:root {
+  /* --------------------------------------------------------
+     ESCALAS DE COLORES — paletas generadas con @for
+     -------------------------------------------------------- */
+  --mlt-sys-color-principal-50: #0057c2;
+  --mlt-sys-color-principal-100: #0046a0;
+  --mlt-sys-color-principal-200: #003a85;
+  --mlt-sys-color-principal-300: #4d8ade;
+  --mlt-sys-color-principal-400: #9db9e8;
+  --mlt-sys-color-principal-500: #e3ebf6;
+  --mlt-sys-color-alternativo-50: #ff812e;
+  --mlt-sys-color-alternativo-100: #e06a1a;
+  --mlt-sys-color-alternativo-200: #b85513;
+  --mlt-sys-color-alternativo-300: #ffb877;
+  --mlt-sys-color-alternativo-400: #ffd8b0;
+  --mlt-sys-color-alternativo-500: #ffeadd;
+  --mlt-sys-color-peligro-50: #d32f2f;
+  --mlt-sys-color-peligro-100: #b02626;
+  --mlt-sys-color-peligro-200: #8c1e1e;
+  --mlt-sys-color-peligro-300: #e88a8a;
+  --mlt-sys-color-peligro-400: #f4c1c1;
+  --mlt-sys-color-peligro-500: #fcecec;
+  --mlt-sys-color-gris-50: #808080;
+  --mlt-sys-color-gris-100: #666666;
+  --mlt-sys-color-gris-200: #4d4d4d;
+  --mlt-sys-color-gris-300: #cccccc;
+  --mlt-sys-color-gris-400: #eeeeee;
+  --mlt-sys-color-gris-500: #f5f5f5;
+  --mlt-sys-color-blanco-50: #ffffff;
+  --mlt-sys-color-blanco-100: #fcfcfc;
+  --mlt-sys-color-blanco-200: #f9f9f9;
+  --mlt-sys-color-blanco-300: #f6f6f6;
+  --mlt-sys-color-blanco-400: #f3f3f3;
+  --mlt-sys-color-blanco-500: #f0f0f0;
+  --mlt-sys-color-negro-50: #000000;
+  --mlt-sys-color-negro-100: #1f1f1f;
+  --mlt-sys-color-negro-200: #3d3d3d;
+  --mlt-sys-color-negro-300: #666666;
+  --mlt-sys-color-negro-400: #999999;
+  --mlt-sys-color-negro-500: #cccccc;
+  --mlt-sys-color-rojo-50: #d32f2f;
+  --mlt-sys-color-rojo-100: #a02222;
+  --mlt-sys-color-rojo-200: #6d1414;
+  --mlt-sys-color-rojo-300: #ef9a9a;
+  --mlt-sys-color-rojo-400: #f8cccc;
+  --mlt-sys-color-rojo-500: #fdeaea;
+  --mlt-sys-color-naranja-50: #ff812e;
+  --mlt-sys-color-naranja-100: #d95f10;
+  --mlt-sys-color-naranja-200: #a34808;
+  --mlt-sys-color-naranja-300: #ffab66;
+  --mlt-sys-color-naranja-400: #ffd4aa;
+  --mlt-sys-color-naranja-500: #ffefe0;
+  --mlt-sys-color-amarillo-50: #ecc94b;
+  --mlt-sys-color-amarillo-100: #c69c10;
+  --mlt-sys-color-amarillo-200: #9a7809;
+  --mlt-sys-color-amarillo-300: #f2d978;
+  --mlt-sys-color-amarillo-400: #f7e7a6;
+  --mlt-sys-color-amarillo-500: #fcf4cf;
+  --mlt-sys-color-verde-50: #3fb84a;
+  --mlt-sys-color-verde-100: #1f7328;
+  --mlt-sys-color-verde-200: #0f4f16;
+  --mlt-sys-color-verde-300: #6fc978;
+  --mlt-sys-color-verde-400: #9cdba2;
+  --mlt-sys-color-verde-500: #c8edcb;
+  --mlt-sys-color-turquesa-50: #1ba8a8;
+  --mlt-sys-color-turquesa-100: #168787;
+  --mlt-sys-color-turquesa-200: #115f5f;
+  --mlt-sys-color-turquesa-300: #7ccfcc;
+  --mlt-sys-color-turquesa-400: #b8e4e2;
+  --mlt-sys-color-turquesa-500: #e2f4f3;
+  --mlt-sys-color-azul-50: #2454b8;
+  --mlt-sys-color-azul-100: #193d96;
+  --mlt-sys-color-azul-200: #102a73;
+  --mlt-sys-color-azul-300: #5879c9;
+  --mlt-sys-color-azul-400: #8ca0db;
+  --mlt-sys-color-azul-500: #c0c9ed;
+  --mlt-sys-color-violeta-50: #7b52ab;
+  --mlt-sys-color-violeta-100: #5e3e86;
+  --mlt-sys-color-violeta-200: #43295e;
+  --mlt-sys-color-violeta-300: #a67fc8;
+  --mlt-sys-color-violeta-400: #c9a9df;
+  --mlt-sys-color-violeta-500: #e8d9f3;
+  --mlt-sys-color-rosa-50: #e36486;
+  --mlt-sys-color-rosa-100: #c24a6b;
+  --mlt-sys-color-rosa-200: #8f2f4a;
+  --mlt-sys-color-rosa-300: #f0a2b7;
+  --mlt-sys-color-rosa-400: #f7c9d6;
+  --mlt-sys-color-rosa-500: #fbe4ea;
+  /* Tokens semánticos de color (referencian las escalas) */
+  --mlt-sys-color-superficie: var(--mlt-sys-color-blanco-50);
+  --mlt-sys-color-texto-claro: var(--mlt-sys-color-blanco-50);
+  --mlt-sys-color-normal: var(--mlt-sys-color-principal-50);
+  --mlt-sys-color-alternativa: var(--mlt-sys-color-alternativo-50);
+  --mlt-sys-color-peligrosa: var(--mlt-sys-color-peligro-50);
+  --mlt-sys-color-titulo: var(--mlt-sys-color-gris-50);
+  --mlt-sys-color-borde: var(--mlt-sys-color-gris-300);
+  /* --------------------------------------------------------
+     ESPACIADO — escala generada con @for
+     -------------------------------------------------------- */
+  --mlt-sys-spacing-1: 0px;
+  --mlt-sys-spacing-2: 4px;
+  --mlt-sys-spacing-3: 6px;
+  --mlt-sys-spacing-4: 8px;
+  --mlt-sys-spacing-5: 10px;
+  --mlt-sys-spacing-6: 12px;
+  --mlt-sys-spacing-7: 16px;
+  --mlt-sys-spacing-8: 18px;
+  --mlt-sys-spacing-9: 20px;
+  --mlt-sys-spacing-10: 24px;
+  --mlt-sys-spacing-11: 28px;
+  --mlt-sys-spacing-12: 32px;
+  --mlt-sys-spacing-13: 40px;
+  --mlt-sys-spacing-14: 48px;
+  --mlt-sys-spacing-15: 64px;
+  --mlt-sys-spacing-16: 80px;
+  --mlt-sys-spacing-17: 96px;
+  /* Paddings compuestos, construidos sobre la escala */
+  --mlt-sys-padding-1: var(--mlt-sys-spacing-3) var(--mlt-sys-spacing-5); /* 6px 10px  */
+  --mlt-sys-padding-2: var(--mlt-sys-spacing-4); /* 8px       */
+  --mlt-sys-padding-3: var(--mlt-sys-spacing-6); /* 12px      */
+  --mlt-sys-padding-4: var(--mlt-sys-spacing-6) var(--mlt-sys-spacing-8); /* 12px 18px */
+  --mlt-sys-padding-5: var(--mlt-sys-spacing-9) var(--mlt-sys-spacing-11); /* 20px 28px */
+  --mlt-sys-separacion: var(--mlt-sys-spacing-7); /* 16px, separación entre paneles y botones */
+  /* Tamaños — escala generada con @for */
+  --mlt-sys-size-1: 0px;
+  --mlt-sys-size-2: 1px;
+  --mlt-sys-size-3: 2px;
+  --mlt-sys-size-4: 4px;
+  --mlt-sys-size-5: 8px;
+  --mlt-sys-size-6: 16px;
+  --mlt-sys-size-7: 24px;
+  --mlt-sys-size-8: 32px;
+  --mlt-sys-size-9: 48px;
+  --mlt-sys-size-10: 64px;
+  --mlt-sys-size-11: 96px;
+  --mlt-sys-size-12: 128px;
+  --mlt-sys-size-13: 256px;
+  /* --------------------------------------------------------
+     TIPOGRAFÍA — escalas generadas con @for
+     -------------------------------------------------------- */
+  --mlt-sys-font-default: Arial, sans-serif;
+  --mlt-sys-font-size-1: 13px;
+  --mlt-sys-font-size-2: 14px;
+  --mlt-sys-font-size-3: 16px;
+  --mlt-sys-font-size-4: 20px;
+  --mlt-sys-font-size-5: 24px;
+  --mlt-sys-font-size-6: 28px;
+  --mlt-sys-font-size-7: 32px;
+  --mlt-sys-line-height-1: 1;
+  --mlt-sys-line-height-2: 1.15;
+  --mlt-sys-line-height-3: 1.25;
+  --mlt-sys-line-height-4: 1.35;
+  --mlt-sys-line-height-5: 1.5;
+  --mlt-sys-line-height-6: 1.6;
+  --mlt-sys-line-height-7: 1.75;
+  --mlt-sys-line-height-8: 2;
+  --mlt-sys-font-weight-1: 100;
+  --mlt-sys-font-weight-2: 200;
+  --mlt-sys-font-weight-3: 300;
+  --mlt-sys-font-weight-4: 400;
+  --mlt-sys-font-weight-5: 500;
+  --mlt-sys-font-weight-6: 600;
+  --mlt-sys-font-weight-7: 700;
+  --mlt-sys-font-weight-8: 800;
+  --mlt-sys-font-weight-9: 900;
+  --mlt-sys-letter-spacing-1: 0px;
+  --mlt-sys-letter-spacing-2: 0.25px;
+  --mlt-sys-letter-spacing-3: 0.5px;
+  --mlt-sys-letter-spacing-4: 1px;
+  --mlt-sys-letter-spacing-5: 1.5px;
+  --mlt-sys-letter-spacing-6: 2px;
+  --mlt-sys-letter-spacing-7: 3px;
+  /* --------------------------------------------------------
+     BORDES — escalas generadas con @for
+     -------------------------------------------------------- */
+  --mlt-sys-border-radius-1: 0px;
+  --mlt-sys-border-radius-2: 2px;
+  --mlt-sys-border-radius-3: 4px;
+  --mlt-sys-border-radius-4: 6px;
+  --mlt-sys-border-radius-5: 8px;
+  --mlt-sys-border-radius-6: 12px;
+  --mlt-sys-border-radius-7: 16px;
+  --mlt-sys-border-radius-8: 20px;
+  --mlt-sys-border-radius-9: 24px;
+  --mlt-sys-border-radius-10: 32px;
+  --mlt-sys-border-width-1: 1px;
+  --mlt-sys-border-width-2: 2px;
+  --mlt-sys-border-width-3: 3px;
+  --mlt-sys-border-width-4: 4px;
+  --mlt-sys-border-width-5: 6px;
+  --mlt-sys-border-width-6: 8px;
+  /* --------------------------------------------------------
+     OPACIDAD — escala generada con @for
+     -------------------------------------------------------- */
+  --mlt-sys-opacity-1: 0;
+  --mlt-sys-opacity-2: 0.1;
+  --mlt-sys-opacity-3: 0.2;
+  --mlt-sys-opacity-4: 0.3;
+  --mlt-sys-opacity-5: 0.4;
+  --mlt-sys-opacity-6: 0.5;
+  --mlt-sys-opacity-7: 0.6;
+  --mlt-sys-opacity-8: 0.7;
+  --mlt-sys-opacity-9: 0.8;
+  --mlt-sys-opacity-10: 0.9;
+  --mlt-sys-opacity-11: 1;
+  --mlt-sys-opacity-disabled: 0.45;
+  /* --------------------------------------------------------
+     MOVIMIENTO Y Z-INDEX — sufijos según el valor
+     -------------------------------------------------------- */
+  --mlt-sys-duration-0: 0ms;
+  --mlt-sys-duration-100: 100ms;
+  --mlt-sys-duration-150: 150ms;
+  --mlt-sys-duration-200: 200ms;
+  --mlt-sys-duration-300: 300ms;
+  --mlt-sys-duration-400: 400ms;
+  --mlt-sys-duration-500: 500ms;
+  --mlt-sys-z-0: 0;
+  --mlt-sys-z-1: 1;
+  --mlt-sys-z-10: 10;
+  --mlt-sys-z-100: 100;
+  --mlt-sys-z-500: 500;
+  /* --------------------------------------------------------
+     TOKENS SEMÁNTICOS DE COMPONENTES
+     (convenio del proyecto BEM, mapeados sobre las escalas)
+     -------------------------------------------------------- */
+  /* Botones */
+  --mlt-sys-boton-radio: var(--mlt-sys-border-radius-3); /* 4px  */
+  --mlt-sys-boton-borde: var(--mlt-sys-border-width-1); /* 1px  */
+  --mlt-sys-boton-transicion: var(--mlt-sys-duration-200); /* 200ms */
+  /* Paneles */
+  --mlt-sys-panel-borde: var(--mlt-sys-border-width-1); /* 1px  */
+  --mlt-sys-panel-relleno: var(--mlt-sys-spacing-5); /* 10px */
+}
+
+/*# sourceMappingURL=system.css.map */

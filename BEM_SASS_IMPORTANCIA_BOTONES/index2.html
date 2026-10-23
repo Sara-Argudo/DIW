@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabla de importancia</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <table class="tabla">
+        <thead class="tabla__cabecera">
+            <tr>
+                <th class="tabla__celda"></th>
+                <th class="tabla__titulo" colspan="3">Importancia</th>
+            </tr>
+            <tr>
+                <th class="tabla__celda tabla__celda--funcion">
+                    Función
+                </th>
+                <th class="tabla__celda">Primaria</th>
+                <th class="tabla__celda">Secundaria</th>
+                <th class="tabla__celda">Terciaria</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <!-- Función normal -->
+            <tr class="tabla__fila tabla__fila--normal">
+                <td class="tabla__celda">Normal</td>
+
+                <td class="tabla__celda">
+                    <button class="tabla__boton tabla__boton--normal tabla__boton--relleno tabla__boton--grande"
+                            onclick="mostrarInfo('Normal')">
+                        Mas información
+                    </button>
+                </td>
+
+                <td class="tabla__celda">
+                    <button class="tabla__boton tabla__boton--normal tabla__boton--medio"
+                            onclick="mostrarInfo('Normal')">
+                        Mas información
+                    </button>
+                </td>
+
+                <td class="tabla__celda">
+                    <button class="tabla__enlace tabla__enlace--normal tabla__enlace--pequeno"
+                            onclick="mostrarInfo('Normal')">
+                        Mas información
+                    </button>
+                </td>
+            </tr>
+
+            <!-- Función alternativa -->
+            <tr class="tabla__fila tabla__fila--alternativa">
+                <td class="tabla__celda">Alternativa</td>
+
+                <td class="tabla__celda">
+                    <button class="tabla__boton tabla__boton--alternativa tabla__boton--relleno tabla__boton--grande"
+                            onclick="mostrarInfo('Alternativa')">
+                        Mas información
+                    </button>
+                </td>
+
+                <td class="tabla__celda">
+                    <button class="tabla__boton tabla__boton--alternativa tabla__boton--medio"
+                            onclick="mostrarInfo('Alternativa')">
+                        Mas información
+                    </button>
+                </td>
+
+                <td class="tabla__celda">
+                    <button class="tabla__enlace tabla__enlace--alternativa tabla__enlace--pequeno"
+                            onclick="mostrarInfo('Alternativa')">
+                        Mas información
+                    </button>
+                </td>
+            </tr>
+
+            <!-- Función peligrosa -->
+            <tr class="tabla__fila tabla__fila--peligrosa">
+                <td class="tabla__celda">Peligrosa</td>
+
+                <td class="tabla__celda">
+                    <button class="tabla__boton tabla__boton--peligrosa tabla__boton--relleno tabla__boton--grande"
+                            onclick="mostrarInfo('Peligrosa')">
+                        Mas información
+                    </button>
+                </td>
+
+                <td class="tabla__celda">
+                    <button class="tabla__boton tabla__boton--peligrosa tabla__boton--medio"
+                            onclick="mostrarInfo('Peligrosa')">
+                        Mas información
+                    </button>
+                </td>
+
+                <td class="tabla__celda">
+                    <button class="tabla__enlace tabla__enlace--peligrosa tabla__enlace--pequeno"
+                            onclick="mostrarInfo('Peligrosa')">
+                        Mas información
+                    </button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        function mostrarInfo(funcion) {
+            alert("Información: " + funcion);
+        }
+    </script>
+
+</body>
+</html>

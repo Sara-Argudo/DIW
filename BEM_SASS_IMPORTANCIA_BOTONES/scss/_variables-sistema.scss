@@ -1,0 +1,94 @@
+// ============================================================
+// VARIABLES SASS DEL SISTEMA DE DISEÑO
+//
+// Este archivo es privado: solo organiza los tokens del sistema
+// (listas y mapas Sass). Las variables aquí definidas NO se
+// consumen directamente: system.scss las convierte en las
+// variables públicas --mlt-sys-* mediante bucles @for.
+//
+// Escalas adaptadas de la referencia y del proyecto BEM original:
+//  - 6px, 10px, 18px y 28px se conservan porque son los paddings
+//    reales del diseño (padding-1, padding-4 y padding-5).
+//  - Las paletas funcionales conservan los colores exactos del
+//    proyecto: #0057c2, #ff812e, #d32f2f, #808080, #cccccc, #eeeeee.
+//  - Las paletas amarillo/verde/azul toman sus tonos de ancla del
+//    proyecto sass-colores. Las paletas turquesa/violeta/rosa son
+//    nuevas porque el sistema las exige pero no existían valores.
+// ============================================================
+
+// Prefijo de las variables públicas del sistema
+$prefix: "mlt-sys";
+
+// Tipografía
+$font-familia: Arial, sans-serif;
+
+// ------------------------------------------------------------
+// ESCALAS (listas; los sufijos se generan por posición con @for)
+// ------------------------------------------------------------
+
+$espaciados: 0px, 4px, 6px, 8px, 10px, 12px, 16px, 18px, 20px, 24px, 28px, 32px, 40px, 48px, 64px, 80px, 96px;
+
+$font-sizes: 13px, 14px, 16px, 20px, 24px, 28px, 32px;
+
+$sizes: 0px, 1px, 2px, 4px, 8px, 16px, 24px, 32px, 48px, 64px, 96px, 128px, 256px;
+
+$border-radii: 0px, 2px, 4px, 6px, 8px, 12px, 16px, 20px, 24px, 32px;
+
+$border-widths: 1px, 2px, 3px, 4px, 6px, 8px;
+
+$line-heights: 1, 1.15, 1.25, 1.35, 1.5, 1.6, 1.75, 2;
+
+$font-weights: 100, 200, 300, 400, 500, 600, 700, 800, 900;
+
+$letter-spacings: 0px, 0.25px, 0.5px, 1px, 1.5px, 2px, 3px;
+
+$opacities: 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1;
+
+// Duraciones sin unidad: se emiten con el sufijo del valor (ms)
+$durations: 0, 100, 150, 200, 300, 400, 500;
+
+// Z-index: se emiten con el sufijo del valor
+$z-indexes: 0, 1, 10, 100, 500;
+
+// ------------------------------------------------------------
+// ESCALAS DE COLORES (mapas de listas de tonos hexadecimales)
+//
+// Convención de cada paleta (6 tonos):
+//   -50  tono base de la paleta
+//   100  tono más oscuro (hover)
+//   200  tono más oscuro aún (active)
+//   300  tinte claro suave (fondo en hover secundario/terciario)
+//   400  tinte claro
+//   500  tinte más claro
+// ------------------------------------------------------------
+
+$paletas: (
+    "principal":   (#0057c2, #0046a0, #003a85, #4d8ade, #9db9e8, #e3ebf6),
+    "alternativo": (#ff812e, #e06a1a, #b85513, #ffb877, #ffd8b0, #ffeadd),
+    "peligro":     (#d32f2f, #b02626, #8c1e1e, #e88a8a, #f4c1c1, #fcecec),
+    "gris":        (#808080, #666666, #4d4d4d, #cccccc, #eeeeee, #f5f5f5),
+    "blanco":      (#ffffff, #fcfcfc, #f9f9f9, #f6f6f6, #f3f3f3, #f0f0f0),
+    "negro":       (#000000, #1f1f1f, #3d3d3d, #666666, #999999, #cccccc),
+    "rojo":        (#d32f2f, #a02222, #6d1414, #ef9a9a, #f8cccc, #fdeaea),
+    "naranja":     (#ff812e, #d95f10, #a34808, #ffab66, #ffd4aa, #ffefe0),
+    "amarillo":    (#ecc94b, #c69c10, #9a7809, #f2d978, #f7e7a6, #fcf4cf),
+    "verde":       (#3fb84a, #1f7328, #0f4f16, #6fc978, #9cdba2, #c8edcb),
+    "turquesa":    (#1ba8a8, #168787, #115f5f, #7ccfcc, #b8e4e2, #e2f4f3),
+    "azul":        (#2454b8, #193d96, #102a73, #5879c9, #8ca0db, #c0c9ed),
+    "violeta":     (#7b52ab, #5e3e86, #43295e, #a67fc8, #c9a9df, #e8d9f3),
+    "rosa":        (#e36486, #c24a6b, #8f2f4a, #f0a2b7, #f7c9d6, #fbe4ea)
+);
+
+// Sufijos de tono, emparejados por posición con cada lista anterior
+$tonos: 50, 100, 200, 300, 400, 500;
+
+// ------------------------------------------------------------
+// Mapeo función → paleta (usado por c-boton y c-panel para
+// generar sus modificadores BEM con @each)
+// ------------------------------------------------------------
+
+$funciones: (
+    "normal":     "principal",
+    "alternativa": "alternativo",
+    "peligrosa":  "peligro"
+);
