@@ -1,0 +1,6 @@
+# Dependencias
+node_modules/
+
+# Archivos compilados que no deben estar en scss/
+scss/*.css
+*.css.map
