@@ -1,61 +1,67 @@
-# DIW
+# DIW — Desarrollo de Interfaces Web
 
-Repositorio de ejercicios del módulo **Desarrollo de Interfaces Web (DIW)** de 2º DAW,
-centrados en la metodología **CSS/BEM** y el preprocesador **Sass**.
+![Ciclo](https://img.shields.io/badge/ciclo-2%C2%BA%20DAW-blue)
+![Módulo](https://img.shields.io/badge/m%C3%B3dulo-DIW-purple)
+![Metodología](https://img.shields.io/badge/metodolog%C3%ADa-BEM-yellowgreen)
+![Preprocesador](https://img.shields.io/badge/preprocesador-Sass-CC6699)
 
-## Estructura
+Repositorio de ejercicios del módulo **Desarrollo de Interfaces Web (DIW)** de 2.º DAW, centrados en la metodología **BEM** para nombrar clases y en el preprocesador **Sass**.
 
-```
+## 🗂️ Estructura
+
+```text
 DIW/
 ├── BEM/
-│   ├── index.html, index2.html, index-sass.html   (versiones de la interfaz)
+│   ├── index.html · index2.html · index-sass.html   # Versiones de la interfaz
 │   ├── scss/
-│   │   ├── _variables.scss, _base.scss            (variables y estilos base)
-│   │   ├── _c-boton.scss, _c-panel.scss           (componentes: botón y panel)
-│   │   ├── _l-paneles.scss                        (layout de paneles)
-│   │   └── main.scss                              (punto de entrada → css/main.css)
-│   ├── css/main.css (+ .map)                      (CSS generado)
-│   ├── paneles/                                   (componentes sueltos: c-boton.css, c-panel.css, l-extremo.css...)
+│   │   ├── _variables.scss · _base.scss             # Variables y estilos base
+│   │   ├── _c-boton.scss · _c-panel.scss            # Componentes: botón y panel
+│   │   ├── _l-paneles.scss                          # Layout de paneles
+│   │   └── main.scss                                # Entrada → css/main.css
+│   ├── css/main.css                                 # CSS generado
+│   ├── paneles/                                     # CSS suelto por componente
 │   └── package.json
 ├── ejemplo-bem/
 │   ├── index.html
-│   ├── guia.md                                    (guía explicativa del ejemplo)
+│   ├── guia.md                                      # Guía explicativa del ejemplo
 │   ├── scss/
-│   │   ├── _system-tokens.scss                    (parciales: variables de sistema, no se compila)
-│   │   ├── system.scss                            (publica tokens en :root → css/system.css)
-│   │   ├── c-boton.scss, c-panel.scss             (componentes)
-│   │   ├── l-extremo.scss, l-stack.scss           (layouts: dos extremos, apilado)
-│   │   └── demo.scss                              (estilos de la página)
-│   ├── css/                                       (CSS compilado por componente)
+│   │   ├── _system-tokens.scss                      # Parcial de tokens (no compila)
+│   │   ├── system.scss                              # Publica tokens en :root
+│   │   ├── c-boton.scss · c-panel.scss              # Componentes
+│   │   ├── l-extremo.scss · l-stack.scss            # Layouts
+│   │   └── demo.scss                                # Estilos de la página
+│   ├── css/                                         # CSS compilado por componente
 │   └── package.json
 └── sass-colores/
-    └── scss/
-        ├── styles.css, styles2.css                (ejercicios de colores/gamas con Sass)
-        └── *.css.map
+    └── scss/                                        # Ejercicios de colores con Sass
 ```
 
-## Contenido
+## 📦 Contenido
 
-- **`BEM/`** — interfaz de **paneles y botones** con metodología BEM: dos versiones,
-  la clásica en CSS puro (`styles.css`) y la versionada con Sass, donde cada parcial
-  compila al CSS principal.
-- **`ejemplo-bem/`** — interfaz con **tres paneles** (Normal, Alternativos, Peligrosos)
-  y **nueve botones**. Los tokens del sistema se publican una sola vez en `:root`
-  desde `system.css` y se consumen con `var()`. Cada componente compila por separado
-  a su propio `css/*.css`. Ver `guia.md` para más detalle.
-- **`sass-colores/`** — ejercicios de colores con Sass (stylesheet principal + maps).
+| Carpeta | Qué contiene |
+| ------- | ------------ |
+| **`BEM/`** | Interfaz de **paneles y botones** con BEM: una versión clásica en CSS puro y otra versionada con Sass, donde cada parcial compila al CSS principal |
+| **`ejemplo-bem/`** | Interfaz con **tres paneles** (Normal, Alternativos, Peligrosos) y **nueve botones**. Los tokens del sistema se publican una sola vez en `:root` desde `system.css` y se consumen con `var()`; cada componente compila a su propio `css/*.css` |
+| **`sass-colores/`** | Ejercicios de colores y gamas con Sass |
 
-## Cómo compilar
+## 🔨 Cómo compilar
 
-Cada carpeta con `package.json` usa el compilador `sass`:
+Las carpetas con `package.json` usan el compilador de Sass:
 
 ```bash
-npm install        # instala sass (solo la primera vez)
-npm run build:sass # compila scss/ → css/  (equivale a: sass scss:css)
+npm install          # instala sass (solo la primera vez)
+npm run build:sass   # compila scss/ → css/  (equivale a: sass scss:css)
 ```
 
-## Otras ramas
+## 🌿 Ramas del repositorio
 
-- `BEM_SASS_IMPORTANCIA_BOTONES` / `importancia` — variación del sistema con
-  **niveles de importancia en los botones** (`scss/components/`, `_variables-sistema.scss`).
-- `sass-colores` — rama específica del ejercicio de colores.
+| Rama | Descripción |
+| ---- | ----------- |
+| `main` | Proyecto principal con ejemplos BEM + Sass |
+| `importancia` | Ejercicios del boletín de importancia en CSS |
+| `BEM_SASS_IMPORTANCIA_BOTONES` | Variación del sistema con **niveles de importancia en los botones**: variables de sistema con listas y bucles `@for`, variables públicas `--mlt-sys-*`, 9 botones (3 funciones × 3 importancias) y 3 paneles independientes |
+| `sass-colores` | Ejercicio específico de colores con Sass |
+
+---
+
+✏️ Proyecto académico de 2.º DAW — módulo **DIW**
