@@ -2,5 +2,6 @@
 node_modules/
 
 # Archivos compilados que no deben estar en scss/
-scss/*.css
+**/scss/*.css
+**/scss/*.css.map
 *.css.map
