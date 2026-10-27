@@ -1,0 +1,9 @@
+{
+  "name": "proyecto",
+  "private": true,
+  "scripts": {
+    "build": "sass src/styles.scss src/styles.css --no-source-map",
+    "watch": "sass --watch src/styles.scss src/styles.css --no-source-map"
+  },
+  "devDependencies": { "sass": "^1.77.0" }
+}

@@ -1,0 +1,55 @@
+.c-panel {
+  // Tokens de diseño: decisiones del diseñador, un valor cada uno
+  --panel-color-normal: var(--mlt-sys-color-principal-5);
+  --panel-color-alternativa: var(--mlt-sys-color-alternativo-5);
+  --panel-color-peligrosa: var(--mlt-sys-color-peligroso-5);
+  --panel-color-texto-titulo: var(--mlt-sys-color-blanco-9);
+  --panel-color-fondo-contenido: var(--mlt-sys-color-blanco-9);
+
+  --panel-titulo-font-family: var(--mlt-sys-font-default);
+  --panel-titulo-font-size: var(--mlt-sys-font-size-5);
+  --panel-titulo-padding-vertical: var(--mlt-sys-padding-3);
+  --panel-titulo-padding-horizontal: var(--mlt-sys-padding-3);
+  --panel-contenido-padding-vertical: var(--mlt-sys-padding-3);
+  --panel-contenido-padding-horizontal: var(--mlt-sys-padding-3);
+  --panel-border-width: var(--mlt-sys-width-1);
+  --panel-border-radius: var(--mlt-sys-border-radius-4);
+
+  // Estado privado: por defecto, función normal
+  --panel-privateState-color: var(--panel-color-normal);
+  --panel-privateState-border-color: var(--panel-privateState-color);
+  --panel-privateState-titulo-background-color: var(--panel-privateState-color);
+
+  // Propiedades CSS: solo usan el estado y los tokens
+  display: block;
+  overflow: hidden;
+  border-width: var(--panel-border-width);
+  border-style: solid;
+  border-radius: var(--panel-border-radius);
+  border-color: var(--panel-privateState-border-color);
+
+  // La función elige qué token de color se usa
+  &--funcion-normal {
+    --panel-privateState-color: var(--panel-color-normal);
+  }
+  &--funcion-alternativa {
+    --panel-privateState-color: var(--panel-color-alternativa);
+  }
+  &--funcion-peligrosa {
+    --panel-privateState-color: var(--panel-color-peligrosa);
+  }
+
+  // Elementos: sin modificadores, el color les llega por el estado del bloque
+  &__titulo {
+    padding: var(--panel-titulo-padding-vertical) var(--panel-titulo-padding-horizontal);
+    font-family: var(--panel-titulo-font-family);
+    font-size: var(--panel-titulo-font-size);
+    background-color: var(--panel-privateState-titulo-background-color);
+    color: var(--panel-color-texto-titulo);
+  }
+
+  &__contenido {
+    padding: var(--panel-contenido-padding-vertical) var(--panel-contenido-padding-horizontal);
+    background-color: var(--panel-color-fondo-contenido);
+  }
+}

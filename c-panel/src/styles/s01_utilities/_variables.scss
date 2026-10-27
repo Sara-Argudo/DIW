@@ -1,0 +1,32 @@
+// Todas las variables SASS del sistema, en un único fichero
+
+$colores: (
+  'gris': (#171717, #262626, #404040, #525252, #737373, #A1A1A1, #D4D4D4, #E5E5E5, #F5F5F5),
+  'blanco': (#EBEBEB, #EDEDED, #F0F0F0, #F2F2F2, #F5F5F5, #F7F7F7, #FAFAFA, #FCFCFC, #FFFFFF),
+  'rojo': (#82181A, #9F0712, #C10007, #E7000B, #FB2C36, #FF6467, #FFA2A2, #FFC9C9, #FFE2E2),
+  'naranja': (#7E2A0C, #9F2D00, #CA3500, #F54900, #FF6900, #FF8904, #FFB86A, #FFD6A7, #FFEDD4),
+  'verde': (#0D542B, #016630, #008236, #00A63E, #00C950, #05DF72, #7BF1A8, #B9F8CF, #DCFCE7),
+  'azul': (#1C398E, #193CB8, #1447E6, #155DFC, #2B7FFF, #51A2FF, #8EC5FF, #BEDBFF, #DBEAFE),
+  'amarillo': (#733E0A, #894B00, #A65F00, #D08700, #F0B100, #FDC700, #FFDF20, #FFF085, #FEF9C2)
+);
+
+// Para que el principal sea verde: cambiar 'azul' por 'verde'
+$colores-semanticos: (
+  'principal': 'azul',
+  'alternativo': 'naranja',
+  'peligroso': 'rojo'
+);
+
+$fuentes: (
+  'sans-serif': (-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif),
+  'monospace': (SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace),
+  'serif': (Palatino, "Palatino Linotype", "Book Antiqua", Georgia, "Times New Roman", Times, serif)
+);
+
+$font-sizes: (10px, 12px, 14px, 16px, 18px, 20px, 22px, 24px, 26px, 28px, 30px);
+$border-radius: (1px, 2px, 4px, 6px);
+$widths: (0px, 1px, 4px, 8px, 12px, 16px, 20px, 24px, 28px, 32px, 36px, 40px);
+
+// Paddings y márgenes se calculan
+$paso: 4px;
+$numero-pasos: 10;

@@ -1,0 +1,8 @@
+// Apila a sus hijos en vertical, con separación y ancho máximo
+.l-pila {
+  display: flex;
+  flex-direction: column;
+  gap: var(--mlt-sys-margin-10);
+  max-width: 380px;
+  margin: var(--mlt-sys-margin-4);
+}

@@ -1,0 +1,43 @@
+@use "sass:list";
+@use "sass:map";
+@use "sass:meta";
+@use "../s01_utilities" as u;
+
+:root {
+  // Colores: con el nombre de cómo son
+  @each $nombre, $tonos in u.$colores {
+    @for $i from 1 through list.length($tonos) {
+      --mlt-sys-color-#{$nombre}-#{$i}: #{list.nth($tonos, $i)};
+    }
+  }
+
+  // Colores semánticos: cada tono apunta al mismo tono de su gama
+  @each $nombre, $gama in u.$colores-semanticos {
+    @for $i from 1 through list.length(map.get(u.$colores, $gama)) {
+      --mlt-sys-color-#{$nombre}-#{$i}: var(--mlt-sys-color-#{$gama}-#{$i});
+    }
+  }
+
+  @each $nombre, $fuente in u.$fuentes {
+    --mlt-sys-font-#{$nombre}: #{meta.inspect($fuente)};
+  }
+  --mlt-sys-font-default: var(--mlt-sys-font-sans-serif);
+
+  @for $i from 1 through list.length(u.$font-sizes) {
+    --mlt-sys-font-size-#{$i}: #{list.nth(u.$font-sizes, $i)};
+  }
+
+  // Paddings y márgenes: calculados con $paso (empiezan en 0)
+  @for $i from 0 through u.$numero-pasos {
+    --mlt-sys-padding-#{$i}: #{u.$paso * $i};
+    --mlt-sys-margin-#{$i}: #{u.$paso * $i};
+  }
+
+  @for $i from 1 through list.length(u.$border-radius) {
+    --mlt-sys-border-radius-#{$i}: #{list.nth(u.$border-radius, $i)};
+  }
+
+  @for $i from 0 through list.length(u.$widths) - 1 {
+    --mlt-sys-width-#{$i}: #{list.nth(u.$widths, $i + 1)};
+  }
+}

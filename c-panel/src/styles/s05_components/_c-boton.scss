@@ -1,0 +1,93 @@
+.c-boton {
+  --boton-color-normal: var(--mlt-sys-color-principal-5);
+  --boton-color-alternativa: var(--mlt-sys-color-alternativo-5);
+  --boton-color-peligrosa: var(--mlt-sys-color-peligroso-5);
+  --boton-color-normal-hover: var(--mlt-sys-color-principal-4);
+  --boton-color-alternativa-hover: var(--mlt-sys-color-alternativo-4);
+  --boton-color-peligrosa-hover: var(--mlt-sys-color-peligroso-4);
+  --boton-color-texto-primaria: var(--mlt-sys-color-blanco-9);
+
+  --boton-font-family: var(--mlt-sys-font-default);
+  --boton-font-size-s: var(--mlt-sys-font-size-3);
+  --boton-font-size-m: var(--mlt-sys-font-size-4);
+  --boton-font-size-l: var(--mlt-sys-font-size-6);
+  --boton-padding-vertical-s: var(--mlt-sys-padding-1);
+  --boton-padding-vertical-m: var(--mlt-sys-padding-2);
+  --boton-padding-vertical-l: var(--mlt-sys-padding-3);
+  --boton-padding-horizontal-s: var(--mlt-sys-padding-3);
+  --boton-padding-horizontal-m: var(--mlt-sys-padding-4);
+  --boton-padding-horizontal-l: var(--mlt-sys-padding-6);
+  --boton-border-width: var(--mlt-sys-width-1);
+  --boton-border-radius: var(--mlt-sys-border-radius-4);
+
+  --boton-privateState-color: var(--boton-color-normal);
+  --boton-privateState-color-hover: var(--boton-color-normal-hover);
+  --boton-privateState-background-color: var(--boton-privateState-color);
+  --boton-privateState-border-color: var(--boton-privateState-color);
+  --boton-privateState-text-color: var(--boton-color-texto-primaria);
+  --boton-privateState-font-size: var(--boton-font-size-m);
+  --boton-privateState-padding-vertical: var(--boton-padding-vertical-m);
+  --boton-privateState-padding-horizontal: var(--boton-padding-horizontal-m);
+
+  font-family: var(--boton-font-family);
+  font-size: var(--boton-privateState-font-size);
+  padding: var(--boton-privateState-padding-vertical) var(--boton-privateState-padding-horizontal);
+  border-radius: var(--boton-border-radius);
+  border-width: var(--boton-border-width);
+  border-style: solid;
+  display: inline-block;
+  cursor: pointer;
+  text-decoration: none;
+  border-color: var(--boton-privateState-border-color);
+  background-color: var(--boton-privateState-background-color);
+  color: var(--boton-privateState-text-color);
+
+  &--funcion-normal {
+    --boton-privateState-color: var(--boton-color-normal);
+    --boton-privateState-color-hover: var(--boton-color-normal-hover);
+  }
+  &--funcion-alternativa {
+    --boton-privateState-color: var(--boton-color-alternativa);
+    --boton-privateState-color-hover: var(--boton-color-alternativa-hover);
+  }
+  &--funcion-peligrosa {
+    --boton-privateState-color: var(--boton-color-peligrosa);
+    --boton-privateState-color-hover: var(--boton-color-peligrosa-hover);
+  }
+
+  &--importancia-primaria {
+    --boton-privateState-background-color: var(--boton-privateState-color);
+    --boton-privateState-border-color: var(--boton-privateState-color);
+    --boton-privateState-text-color: var(--boton-color-texto-primaria);
+  }
+  &--importancia-secundaria {
+    --boton-privateState-background-color: transparent;
+    --boton-privateState-border-color: var(--boton-privateState-color);
+    --boton-privateState-text-color: var(--boton-privateState-color);
+  }
+  &--importancia-terciaria {
+    --boton-privateState-background-color: transparent;
+    --boton-privateState-border-color: transparent;
+    --boton-privateState-text-color: var(--boton-privateState-color);
+  }
+
+  &--size-s {
+    --boton-privateState-font-size: var(--boton-font-size-s);
+    --boton-privateState-padding-vertical: var(--boton-padding-vertical-s);
+    --boton-privateState-padding-horizontal: var(--boton-padding-horizontal-s);
+  }
+  &--size-m {
+    --boton-privateState-font-size: var(--boton-font-size-m);
+    --boton-privateState-padding-vertical: var(--boton-padding-vertical-m);
+    --boton-privateState-padding-horizontal: var(--boton-padding-horizontal-m);
+  }
+  &--size-l {
+    --boton-privateState-font-size: var(--boton-font-size-l);
+    --boton-privateState-padding-vertical: var(--boton-padding-vertical-l);
+    --boton-privateState-padding-horizontal: var(--boton-padding-horizontal-l);
+  }
+
+  &:hover {
+    --boton-privateState-color: var(--boton-privateState-color-hover);
+  }
+}
